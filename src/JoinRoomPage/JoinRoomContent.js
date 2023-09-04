@@ -53,7 +53,6 @@ const JoinRoomContent = (props) => {
       setErrorMessage("Meeting not found. Check your meeting id.");
     }
   };
-  
 
   const createRoom = () => {
     history.push("/room");

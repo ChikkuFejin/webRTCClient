@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-// import { setActiveConversation } from "../../store/RoomSlice";
 import { setActiveConversation } from "../../store/actions";
 
 const SingleParticipant = (props) => {

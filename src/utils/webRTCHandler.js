@@ -3,7 +3,6 @@ import store from "../store/store";
 import * as wss from "./wss";
 import Peer from "simple-peer";
 import { fetchTURNCredentials, getTurnIceServers } from "./turn";
-// import { setMessages, setShowOverlay } from "../store/RoomSlice";
 
 const defaultConstraints = {
   audio: true,
@@ -41,7 +40,7 @@ export const getLocalPreviewAndInitRoomConnection = async (
       store.dispatch(setShowOverlay(false));
 
       isRoomHost
-        ? wss.createNewRoom(identity, onlyAudio,roomId)
+        ? wss.createNewRoom(identity, onlyAudio)
         : wss.joinRoom(identity, roomId, onlyAudio);
     })
     .catch((err) => {

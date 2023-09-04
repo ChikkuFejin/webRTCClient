@@ -1,5 +1,4 @@
 import { setDirectChatHistory } from "../store/actions";
-// import { setDirectChatHistory } from "../store/RoomSlice";
 import store from "../store/store";
 
 export const appendNewMessageToChatHistory = (data) => {

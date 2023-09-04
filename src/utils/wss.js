@@ -3,9 +3,8 @@ import { setRoomId, setParticipants, setSocketId } from "../store/actions";
 import store from "../store/store";
 import * as webRTCHandler from "./webRTCHandler";
 import { appendNewMessageToChatHistory } from "./directMessages";
-// import { setParticipants, setRoomId, setSocketId } from "../store/RoomSlice";
 
-const SERVER = "https://webrtcserer.onrender.com";
+const SERVER = "http://localhost:5002";
 
 let socket = null;
 
@@ -57,13 +56,11 @@ export const connectWithSocketIOServer = () => {
   });
 };
 
- 
-    export const createNewRoom = (identity, onlyAudio,roomId="") => {
+export const createNewRoom = (identity, onlyAudio) => {
   // emit an event to server that we would like to create new room
   const data = {
     identity,
     onlyAudio,
-    roomId
   };
 
   socket.emit("create-new-room", data);
