@@ -4,7 +4,7 @@ import store from "../store/store";
 import * as webRTCHandler from "./webRTCHandler";
 import { appendNewMessageToChatHistory } from "./directMessages";
 
-const SERVER = "http://localhost:5002";
+const SERVER = "https://webrtcserer.onrender.com";
 
 let socket = null;
 
@@ -19,13 +19,11 @@ export const connectWithSocketIOServer = () => {
 
   socket.on("room-id", (data) => {
     const { roomId } = data;
-    console.log("🚀 ~ file: wss.js:22 ~ socket.on ~ roomId:", roomId)
     store.dispatch(setRoomId(roomId));
   });
 
   socket.on("room-update", (data) => {
     const { connectedUsers } = data;
-    console.log("🚀 ~ file: wss.js:27 ~ socket.on ~ connectedUsers:", connectedUsers)
     store.dispatch(setParticipants(connectedUsers));
   });
 
@@ -73,7 +71,6 @@ export const joinRoom = (identity, roomId, onlyAudio) => {
     identity,
     onlyAudio,
   };
-  console.log("🚀 ~ file: wss.js:74 ~ joinRoom ~ data:", data)
 
   socket.emit("join-room", data);
 };
