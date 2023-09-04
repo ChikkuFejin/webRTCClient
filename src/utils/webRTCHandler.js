@@ -41,7 +41,7 @@ export const getLocalPreviewAndInitRoomConnection = async (
       store.dispatch(setShowOverlay(false));
 
       isRoomHost
-        ? wss.createNewRoom(identity, onlyAudio)
+        ? wss.createNewRoom(identity, onlyAudio,roomId)
         : wss.joinRoom(identity, roomId, onlyAudio);
     })
     .catch((err) => {

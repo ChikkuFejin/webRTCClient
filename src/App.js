@@ -6,6 +6,7 @@ import RoomPage from "./RoomPage/RoomPage";
 import { connectWithSocketIOServer } from "./utils/wss";
 
 import "./App.css";
+import JoinClient from "./JoinClient/JoinClient";
 
 function App() {
   useEffect(() => {
@@ -15,6 +16,9 @@ function App() {
   return (
     <Router>
       <Switch>
+      <Route exact path="/join/:id/:name/:host/:callBack">
+          <JoinClient />
+        </Route>
         <Route path="/join-room">
           <JoinRoomPage />
         </Route>
@@ -24,6 +28,7 @@ function App() {
         <Route path="/">
           <IntroductionPage />
         </Route>
+        
       </Switch>
     </Router>
   );

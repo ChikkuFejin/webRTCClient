@@ -57,11 +57,13 @@ export const connectWithSocketIOServer = () => {
   });
 };
 
-export const createNewRoom = (identity, onlyAudio) => {
+ 
+    export const createNewRoom = (identity, onlyAudio,roomId="") => {
   // emit an event to server that we would like to create new room
   const data = {
     identity,
     onlyAudio,
+    roomId
   };
 
   socket.emit("create-new-room", data);
