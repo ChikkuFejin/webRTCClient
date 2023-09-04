@@ -14,7 +14,9 @@ const IntroductionPage = ({ setIsRoomHostAction }) => {
   return (
     <div className="introduction_page_container">
       <div className="introduction_page_panel">
-        <img src={logo} className="introduction_page_image"></img>
+        {/* <img src={logo} className="introduction_page_image"></img>
+         */}
+         <h1 >CANOSHO Meet</h1>
         <ConnectingButtons />
       </div>
     </div>
