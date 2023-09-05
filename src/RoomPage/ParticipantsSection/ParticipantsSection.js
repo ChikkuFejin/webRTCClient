@@ -8,7 +8,7 @@ const ParticipantsSection = () => {
     <div className="participants_section_container">
       <ParticipantsLabel />
       <Participants />
-      <DirectChat />
+      {/* <DirectChat /> */}
     </div>
   );
 };

@@ -41,7 +41,7 @@ const SwitchToScreenSharingButton = () => {
 
   return (
     <>
-      <div className="video_button_container">
+      <div className="video_button_container" title="Screen share">
         <img
           src={SwitchImg}
           onClick={handleScreenShareToggle}
